@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int sq_rt(int n)
+long long int sq_rt(int n)
 {
     int low = 0, high = n;
-    int ans=-1;
+    long long int ans=-1;
     while(low<=high)
     {
-        int mid = low + (high-low)/2;
+        long long int mid = low + (high-low)/2;
         if(mid*mid == n)
         {
             return mid;
