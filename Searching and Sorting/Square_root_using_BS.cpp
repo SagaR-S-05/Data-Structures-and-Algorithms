@@ -26,9 +26,26 @@ long long int sq_rt(int n)
     return ans;
 }
 
+double morePrecision(int n, int precision , int tempsol )
+{
+    double factor=1;
+    double ans = tempsol;
+
+    for(int i=0;i<precision;i++)
+    {
+        factor=factor/10;
+    }
+    for(double j=ans;j*j<n;j=j+factor)
+    {
+        ans=j;
+    }
+    return ans;
+}
+
 int main()
 {
     int n;
     cin>>n;
-    cout<<sq_rt(n);
+    int tempsol=sq_rt(n);
+    cout<<"Ans: "<<morePrecision(n,3,tempsol)<<endl;
 }
