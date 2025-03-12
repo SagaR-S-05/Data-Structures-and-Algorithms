@@ -1,8 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 string intToRoman(int num) {
+    //Approach 1 - O(n) using pairs to store values and corresponding roman symbol.
     string result = "";
+    vector<pair<int,string>> roman = {{1000,"M"},{900,"CM"},{500,"D"},{400,"CD"},{100,"C"},{90,"XC"},{50,"L"},{40,"XL"},{10,"X"},{9,"IX"},{5,"V"},
+                                        {4,"IV"},{1,"I"}};
+    for(auto &pair : roman)
+    {
+        int value=pair.first;
+        string symbol=pair.second;
+        while(num>=value)
+        {
+            result+=symbol;
+            num-=value;
+        }
+        
+    }
+    return result;
+}
 
+    
+/* Approach 2 - O(1)
+    string result="";
     string thousand = "M";
     string five_hund = "D";
     string hundred = "C";
@@ -71,7 +90,7 @@ string intToRoman(int num) {
 
     return result;
 }
-
+*/
 int main()
 {
     int num;
