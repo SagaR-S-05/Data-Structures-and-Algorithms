@@ -44,7 +44,7 @@ int main()
         cout<<x<<" "; // 3 5 7 1
     }
     cout<<endl;
-    // Sort: Based on IntroSort -  Combination of qucik,heap and insertion sorts.
+    // Sort: Based on IntroSort -  Combination of quick,heap and insertion sorts.
 
     sort(v.begin(),v.end());
     for(auto x: v)
